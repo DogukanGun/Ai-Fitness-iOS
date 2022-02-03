@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ssK-8J-hoo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User FormVC-->
+        <scene sceneID="Oiu-Jy-7dB">
+            <objects>
+                <viewController id="FEy-Po-rNZ" customClass="UserFormVC" customModule="AIFitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pij-Zh-hkd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ss1-gI-b6g">
+                                <rect key="frame" x="16" y="154" width="382" height="623.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oz-0z-sCM">
+                                <rect key="frame" x="16" y="793.5" width="382" height="52.5"/>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Register">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="32"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPressed" destination="FEy-Po-rNZ" eventType="touchUpInside" id="VBj-wl-wz4"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qV3-Ee-uD7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cAl-Fc-pur">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="n1M-Ub-70g"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedSegmentTintColor" systemColor="systemRedColor"/>
+                                        <connections>
+                                            <action selector="segmentValueChanged:" destination="FEy-Po-rNZ" eventType="valueChanged" id="bN4-Bd-iD1"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" name="TabbarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cAl-Fc-pur" secondAttribute="trailing" id="0Zz-Fo-RQt"/>
+                                    <constraint firstItem="cAl-Fc-pur" firstAttribute="top" secondItem="qV3-Ee-uD7" secondAttribute="top" id="6db-K9-4Tp"/>
+                                    <constraint firstItem="cAl-Fc-pur" firstAttribute="leading" secondItem="qV3-Ee-uD7" secondAttribute="leading" id="Z8u-o0-JEt"/>
+                                    <constraint firstAttribute="bottom" secondItem="cAl-Fc-pur" secondAttribute="bottom" id="zvR-PW-XEs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Agt-Uf-0CL"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ss1-gI-b6g" firstAttribute="leading" secondItem="Agt-Uf-0CL" secondAttribute="leading" constant="16" id="C6A-vZ-ZH1"/>
+                            <constraint firstItem="Ss1-gI-b6g" firstAttribute="top" secondItem="qV3-Ee-uD7" secondAttribute="bottom" constant="16" id="F2i-ea-4dI"/>
+                            <constraint firstItem="Agt-Uf-0CL" firstAttribute="trailing" secondItem="qV3-Ee-uD7" secondAttribute="trailing" id="HNn-4l-X8w"/>
+                            <constraint firstItem="5Oz-0z-sCM" firstAttribute="top" secondItem="Ss1-gI-b6g" secondAttribute="bottom" constant="16" id="L4K-tE-gn1"/>
+                            <constraint firstItem="qV3-Ee-uD7" firstAttribute="leading" secondItem="Agt-Uf-0CL" secondAttribute="leading" id="OZu-z5-ttk"/>
+                            <constraint firstItem="Agt-Uf-0CL" firstAttribute="trailing" secondItem="5Oz-0z-sCM" secondAttribute="trailing" constant="16" id="Qaj-Wo-pCo"/>
+                            <constraint firstItem="5Oz-0z-sCM" firstAttribute="leading" secondItem="Agt-Uf-0CL" secondAttribute="leading" constant="16" id="TKf-Ot-k8P"/>
+                            <constraint firstItem="Agt-Uf-0CL" firstAttribute="bottom" secondItem="5Oz-0z-sCM" secondAttribute="bottom" constant="16" id="bGb-V0-aXb"/>
+                            <constraint firstItem="Agt-Uf-0CL" firstAttribute="trailing" secondItem="Ss1-gI-b6g" secondAttribute="trailing" constant="16" id="ce5-5J-vzk"/>
+                            <constraint firstItem="qV3-Ee-uD7" firstAttribute="top" secondItem="Agt-Uf-0CL" secondAttribute="top" id="cfF-ev-PeI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aAb-5S-C8P"/>
+                    <connections>
+                        <outlet property="button" destination="5Oz-0z-sCM" id="fai-dn-jga"/>
+                        <outlet property="form" destination="Ss1-gI-b6g" id="lxP-jA-ZRk"/>
+                        <outlet property="segmentControl" destination="cAl-Fc-pur" id="H3J-0o-Bng"/>
+                        <segue destination="cuW-nu-qtm" kind="show" identifier="Main" id="0ua-1n-Aad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPa-te-5u9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2686.9565217391305" y="69.642857142857139"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="geV-Hh-Qvy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="cuW-nu-qtm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2FS-Rf-Nbm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0U-kf-DcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3740" y="70"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pF4-Kx-IsR">
+            <objects>
+                <navigationController storyboardIdentifier="IntroducePageVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ssK-8J-hoo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fv3-4L-Ie8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FEy-Po-rNZ" kind="relationship" relationship="rootViewController" id="Eg0-4b-QXe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3V-Zb-fuR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776.8115942028987" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.074509803921568626" green="0.078431372549019607" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="0.019607843137254902" green="0.32549019607843138" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TabbarColor">
+            <color red="0.14117647058823529" green="0.14509803921568629" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
