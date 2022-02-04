@@ -15,19 +15,21 @@ struct MainpageVariable{
 }
 class MainpageVC:UIViewController{
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var collectionViewTitle: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var barButtonItem: UIBarButtonItem!
     
     var presenter:ViewToPresenterMainpageProtocol?
     var sports = [Workout]()
     private let itemsPerRow:CGFloat=2
     private let sectionInsets = UIEdgeInsets(top: 0, left: 15.0, bottom: 0, right: 10.0)
     override func viewDidLoad() {
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width,height: scrollView.frame.size.height);
         tabBarController?.setTabbar()
         createView()
         navigationItem.setNavigationBar()
+        navigationController?.setBarButtons(navigationItem: navigationItem)
     }
     private func createView(){
         createCollectionView()

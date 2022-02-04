@@ -26,7 +26,9 @@ class WorkoutVC:UIViewController{
         WorkoutRouter.createModule(ref: self)
         setCollectionView()
         navigationItem.setNavigationBar()
+        navigationController?.setBarButtons(navigationItem: navigationItem)
         tabBarController?.setTabbar()
+        
     }
     
     private func setCollectionView(){

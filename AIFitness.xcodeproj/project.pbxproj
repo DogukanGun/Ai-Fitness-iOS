@@ -16,7 +16,10 @@
 		9E0123C527AC6754004C8904 /* WorkoutCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0123C427AC6754004C8904 /* WorkoutCellDelegate.swift */; };
 		9E0123C727AC6CC0004C8904 /* CollectionView+setDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0123C627AC6CC0004C8904 /* CollectionView+setDesign.swift */; };
 		9E0123C927AC7071004C8904 /* UITabbarController+setTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0123C827AC7071004C8904 /* UITabbarController+setTabbar.swift */; };
-		9E0123CD27AC73B8004C8904 /* WorkoıutDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0123CC27AC73B8004C8904 /* WorkoıutDetailVC.swift */; };
+		9E0123CD27AC73B8004C8904 /* WorkoutDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0123CC27AC73B8004C8904 /* WorkoutDetailVC.swift */; };
+		9E2E281E27AD680300E813AB /* BarButtonPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2E281D27AD680300E813AB /* BarButtonPlace.swift */; };
+		9E2E282027AD6AAA00E813AB /* UINavigationController+setBarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2E281F27AD6AAA00E813AB /* UINavigationController+setBarButtons.swift */; };
+		9E2E282527AD6DEF00E813AB /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2E282427AD6DEF00E813AB /* SettingsVC.swift */; };
 		9E34497D276651B200A55178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E34497C276651B200A55178 /* AppDelegate.swift */; };
 		9E34497F276651B200A55178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E34497E276651B200A55178 /* SceneDelegate.swift */; };
 		9E344984276651B200A55178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E344982276651B200A55178 /* Main.storyboard */; };
@@ -89,7 +92,10 @@
 		9E0123C427AC6754004C8904 /* WorkoutCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellDelegate.swift; sourceTree = "<group>"; };
 		9E0123C627AC6CC0004C8904 /* CollectionView+setDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+setDesign.swift"; sourceTree = "<group>"; };
 		9E0123C827AC7071004C8904 /* UITabbarController+setTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabbarController+setTabbar.swift"; sourceTree = "<group>"; };
-		9E0123CC27AC73B8004C8904 /* WorkoıutDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoıutDetailVC.swift"; sourceTree = "<group>"; };
+		9E0123CC27AC73B8004C8904 /* WorkoutDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailVC.swift; sourceTree = "<group>"; };
+		9E2E281D27AD680300E813AB /* BarButtonPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonPlace.swift; sourceTree = "<group>"; };
+		9E2E281F27AD6AAA00E813AB /* UINavigationController+setBarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+setBarButtons.swift"; sourceTree = "<group>"; };
+		9E2E282427AD6DEF00E813AB /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		9E344979276651B200A55178 /* AIFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E34497C276651B200A55178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E34497E276651B200A55178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,7 +198,31 @@
 		9E0123CB27AC73AF004C8904 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				9E0123CC27AC73B8004C8904 /* WorkoıutDetailVC.swift */,
+				9E0123CC27AC73B8004C8904 /* WorkoutDetailVC.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9E2E282127AD6DD800E813AB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9E2E282227AD6DDD00E813AB /* settings-module */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9E2E282227AD6DDD00E813AB /* settings-module */ = {
+			isa = PBXGroup;
+			children = (
+				9E2E282327AD6DE500E813AB /* view */,
+			);
+			path = "settings-module";
+			sourceTree = "<group>";
+		};
+		9E2E282327AD6DE500E813AB /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9E2E282427AD6DEF00E813AB /* SettingsVC.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -475,6 +505,7 @@
 		9ED0341F276FD4DB007A32A5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9E2E282127AD6DD800E813AB /* Settings */,
 				9E3B3AAB2780FECB00C9F13F /* Workout */,
 				9E3B395F277C605300C9F13F /* Profile */,
 				9ED03426276FD9FD007A32A5 /* Main */,
@@ -518,6 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				9E3449B02766534C00A55178 /* FormFields.swift */,
+				9E2E281D27AD680300E813AB /* BarButtonPlace.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -549,6 +581,7 @@
 				9E0123BE27AC30C4004C8904 /* UINavigationItem+setNavigationItem.swift */,
 				9E0123C627AC6CC0004C8904 /* CollectionView+setDesign.swift */,
 				9E0123C827AC7071004C8904 /* UITabbarController+setTabbar.swift */,
+				9E2E281F27AD6AAA00E813AB /* UINavigationController+setBarButtons.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -826,11 +859,13 @@
 				9E3B3AC32782025C00C9F13F /* ProfileMenuTableViewCell.swift in Sources */,
 				9E0123BF27AC30C4004C8904 /* UINavigationItem+setNavigationItem.swift in Sources */,
 				9ED03436277082F9007A32A5 /* CollectionView+getSpace.swift in Sources */,
-				9E0123CD27AC73B8004C8904 /* WorkoıutDetailVC.swift in Sources */,
+				9E0123CD27AC73B8004C8904 /* WorkoutDetailVC.swift in Sources */,
 				9E34497D276651B200A55178 /* AppDelegate.swift in Sources */,
 				9E3B3AB62780FFA300C9F13F /* WorkoutPresenter.swift in Sources */,
+				9E2E282027AD6AAA00E813AB /* UINavigationController+setBarButtons.swift in Sources */,
 				9E0123C727AC6CC0004C8904 /* CollectionView+setDesign.swift in Sources */,
 				9E3B3AB42780FF5000C9F13F /* WorkoutProtocols.swift in Sources */,
+				9E2E282527AD6DEF00E813AB /* SettingsVC.swift in Sources */,
 				9E3B3959277C59BA00C9F13F /* MainpagePresenter.swift in Sources */,
 				9E8847EF27AC2B3C005269AD /* Constant.swift in Sources */,
 				9E3449B527665BED00A55178 /* FormCell.swift in Sources */,
@@ -850,6 +885,7 @@
 				9E0123C927AC7071004C8904 /* UITabbarController+setTabbar.swift in Sources */,
 				9E3449AF2766531900A55178 /* UserFormVC.swift in Sources */,
 				9E3B3967277C60A900C9F13F /* ProfileMenuVC.swift in Sources */,
+				9E2E281E27AD680300E813AB /* BarButtonPlace.swift in Sources */,
 				9E3B3ACA27820C3C00C9F13F /* ProfileMenuPresenter.swift in Sources */,
 				9E3B3AB82780FFAD00C9F13F /* WorkoutInteractor.swift in Sources */,
 				9E3449B12766534C00A55178 /* FormFields.swift in Sources */,
