@@ -6,17 +6,31 @@
 //
 
 import Foundation
+import Alamofire
 
 class MainpageInteractor:PresenterToInteractorMainpageProtocol{
     var presenter: InteractorToPresenterMainpageProtocol?
     
     func getAllData() {
-        var list = [Workout]()
-        let sportMovement = Workout(title: "Sport", imageBase64Form: ImageExample.image)
-        list.append(sportMovement)
-        list.append(sportMovement)
-        list.append(sportMovement)
-        list.append(sportMovement)
-        presenter?.sendDataToPresenter(data:list)
+        AF.request(NetworkUrl.getAllWorkouts, method: .post)
+            .responseDecodable(of: [Workout].self){ response in
+                do{
+                    self.presenter?.sendDataToPresenter(data: response.value ?? [Workout]()) 
+                }catch{
+                    print(error)
+                }
+        }
     }
+    
+    func searchData(word: String) {
+        AF.request(NetworkUrl.getWorkoutsByName+word, method: .post)
+            .responseDecodable(of: [Workout].self){ response in
+                do{
+                    self.presenter?.sendDataToPresenter(data: response.value ?? [Workout]())
+                }catch{
+                    print(error)
+                }
+        }
+    }
+    
 }

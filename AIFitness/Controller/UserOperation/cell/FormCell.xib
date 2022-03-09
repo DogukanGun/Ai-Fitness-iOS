@@ -29,9 +29,6 @@
                                 <color key="value" systemColor="tertiarySystemGroupedBackgroundColor"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
-                        <connections>
-                            <action selector="valueChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="BSa-tK-wJX"/>
-                        </connections>
                     </textField>
                 </subviews>
                 <constraints>

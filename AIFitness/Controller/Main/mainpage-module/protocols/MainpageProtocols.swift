@@ -14,12 +14,15 @@ protocol ViewToPresenterMainpageProtocol{
     var view:PresenterToViewMainpageProtocol? {get set}
     
     func getAllData()
+    func searchData(word:String)
     
 }
 
 protocol PresenterToInteractorMainpageProtocol{
     var presenter:InteractorToPresenterMainpageProtocol? {get set}
     func getAllData()
+    func searchData(word:String)
+    
 }
 
 //helper protocols

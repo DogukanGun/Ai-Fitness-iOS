@@ -14,6 +14,8 @@ class FormCell: UITableViewCell {
     private var fieldType:UserForm?
     override func awakeFromNib() {
         super.awakeFromNib()
+        textField.addTarget(self, action: #selector(valueChange(_:)), for: .editingChanged)
+
         // Initialization code
     }
 
@@ -30,9 +32,10 @@ class FormCell: UITableViewCell {
                 textField.textContentType = UITextContentType.name
             case .TELEPHONE:
                 textField.textContentType = UITextContentType.telephoneNumber
-            case .BIRTHDAY:
-                textField.textContentType = UITextContentType.dateTime
+            case .EMAIL:
+                textField.textContentType = UITextContentType.emailAddress
         }
+        textField.text = ""
         textField.attributedPlaceholder = NSAttributedString(
             string: field.rawValue,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "TabbarColor")]

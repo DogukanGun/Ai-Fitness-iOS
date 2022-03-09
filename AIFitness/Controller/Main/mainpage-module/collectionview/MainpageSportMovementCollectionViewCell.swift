@@ -17,12 +17,15 @@ class MainpageSportMovementCollectionViewCell: UICollectionViewCell {
     
     
     func refresh(sportMovement:Workout){
-        if let imageBase64Form = sportMovement.imageBase64Form, let title = sportMovement.title, let imageData = Data(base64Encoded: imageBase64Form, options: Data.Base64DecodingOptions.ignoreUnknownCharacters){
+        if let imageBase64Form = sportMovement.workoutImage, let imageData = Data(base64Encoded: imageBase64Form, options: Data.Base64DecodingOptions.ignoreUnknownCharacters){
             cellImage.image = UIImage(named:"TestImage")?.withRoundedCorners(radius: CGFloat(40))
             cellImage.layer.masksToBounds = true
+        }else{
+            cellImage.image = UIImage(named:"TestImage")?.withRoundedCorners(radius: CGFloat(40))
+        }
+        if let title = sportMovement.workoutName {
             cellLabel.text = title
         }
-        
     }
 
 }

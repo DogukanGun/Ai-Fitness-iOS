@@ -32,7 +32,7 @@ class WorkoutCollectionViewCell: UICollectionViewCell {
 
     func refresh(workout:Workout){
         workoutButton.reshape()
-        if let workoutName = workout.title{
+        if let workoutName = workout.workoutName{
             workoutLabel.text = workoutName
         }
         self.workout = workout

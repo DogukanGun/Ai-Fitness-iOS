@@ -7,14 +7,17 @@
 
 import Foundation
 
-class Workout{
-    var title:String?
-    var imageBase64Form:String?
+class Workout:Codable{
+    var id:Int?
+    var workoutName:String?
+    var workoutDescription:String?
+    var workoutRating:Int?
+    var workoutImage:String?
     
     init(){}
     
-    init(title:String,imageBase64Form:String){
-        self.title = title
-        self.imageBase64Form = imageBase64Form
+    init(workoutName:String,workoutImage:String){
+        self.workoutName = workoutName
+        self.workoutImage = workoutImage
     }
 }

@@ -62,6 +62,17 @@
 		9ED03438277097AD007A32A5 /* ImageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED03437277097AD007A32A5 /* ImageExample.swift */; };
 		9ED8B16D277A0393005C96A1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED8B16C277A0393005C96A1 /* Login.swift */; };
 		9ED8B16F277A03A3005C96A1 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED8B16E277A03A3005C96A1 /* Register.swift */; };
+		9EE5EEC027D7CEAD0063A273 /* UserOperationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EEBF27D7CEAD0063A273 /* UserOperationProtocols.swift */; };
+		9EE5EEC327D7CF580063A273 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EEC227D7CF580063A273 /* RegisterRequest.swift */; };
+		9EE5EEC527D7CF600063A273 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EEC427D7CF600063A273 /* LoginRequest.swift */; };
+		9EE5EEC727D7D0920063A273 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EEC627D7D0920063A273 /* UserResponse.swift */; };
+		9EE5EEC927D7D0F20063A273 /* UserFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EEC827D7D0F20063A273 /* UserFormRouter.swift */; };
+		9EE5EECB27D7D13F0063A273 /* UserFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EECA27D7D13F0063A273 /* UserFormInteractor.swift */; };
+		9EE5EECE27D7D1710063A273 /* UserFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EECD27D7D1710063A273 /* UserFormPresenter.swift */; };
+		9EE5EED127D7D4970063A273 /* NetworkUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EED027D7D4970063A273 /* NetworkUrl.swift */; };
+		9EE5EED427D88FAF0063A273 /* CustomDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EED327D88FAF0063A273 /* CustomDialogVC.swift */; };
+		9EE5EED627D88FC00063A273 /* CustomDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE5EED527D88FC00063A273 /* CustomDialogView.xib */; };
+		9EE5EEDC27D895CE0063A273 /* CustomDialogContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5EEDB27D895CE0063A273 /* CustomDialogContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +153,17 @@
 		9ED03437277097AD007A32A5 /* ImageExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExample.swift; sourceTree = "<group>"; };
 		9ED8B16C277A0393005C96A1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		9ED8B16E277A03A3005C96A1 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		9EE5EEBF27D7CEAD0063A273 /* UserOperationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOperationProtocols.swift; sourceTree = "<group>"; };
+		9EE5EEC227D7CF580063A273 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		9EE5EEC427D7CF600063A273 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		9EE5EEC627D7D0920063A273 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		9EE5EEC827D7D0F20063A273 /* UserFormRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormRouter.swift; sourceTree = "<group>"; };
+		9EE5EECA27D7D13F0063A273 /* UserFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormInteractor.swift; sourceTree = "<group>"; };
+		9EE5EECD27D7D1710063A273 /* UserFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormPresenter.swift; sourceTree = "<group>"; };
+		9EE5EED027D7D4970063A273 /* NetworkUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrl.swift; sourceTree = "<group>"; };
+		9EE5EED327D88FAF0063A273 /* CustomDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialogVC.swift; sourceTree = "<group>"; };
+		9EE5EED527D88FC00063A273 /* CustomDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDialogView.xib; sourceTree = "<group>"; };
+		9EE5EEDB27D895CE0063A273 /* CustomDialogContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialogContent.swift; sourceTree = "<group>"; };
 		A8EA23C3F8FC3D01CDDA9C25 /* Pods-AIFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIFitnessTests.debug.xcconfig"; path = "Target Support Files/Pods-AIFitnessTests/Pods-AIFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D05B5FB123FD27A2A098F44F /* Pods_AIFitness_AIFitnessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIFitness_AIFitnessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0876A667C309161D5D4A049 /* Pods-AIFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIFitness.release.xcconfig"; path = "Target Support Files/Pods-AIFitness/Pods-AIFitness.release.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +274,7 @@
 		9E34497B276651B200A55178 /* AIFitness */ = {
 			isa = PBXGroup;
 			children = (
+				9EE5EECF27D7D48E0063A273 /* Network */,
 				9ED03434277082DB007A32A5 /* Helper */,
 				9ED03421276FD5AF007A32A5 /* Storyboard */,
 				9ED03420276FD5A6007A32A5 /* Model */,
@@ -517,6 +540,7 @@
 		9ED03420276FD5A6007A32A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9EE5EEC127D7CF4A0063A273 /* UserOperation */,
 				9E3B3ABD278101E800C9F13F /* Menu */,
 				9ED8B16B277A038A005C96A1 /* User */,
 				9ED0343127707DFB007A32A5 /* Workout */,
@@ -539,8 +563,12 @@
 		9ED03424276FD7B3007A32A5 /* UserOperation */ = {
 			isa = PBXGroup;
 			children = (
+				9EE5EEBE27D7CE6C0063A273 /* protocols */,
+				9EE5EEBD27D7CE650063A273 /* router */,
+				9EE5EEBC27D7CE5E0063A273 /* interactor */,
+				9EE5EEBB27D7CE530063A273 /* presenter */,
+				9EE5EEBA27D7CE460063A273 /* view */,
 				9E3449B227665B3400A55178 /* cell */,
-				9E3449AE2766531900A55178 /* UserFormVC.swift */,
 			);
 			path = UserOperation;
 			sourceTree = "<group>";
@@ -574,6 +602,7 @@
 		9ED03434277082DB007A32A5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				9EE5EED227D88F9E0063A273 /* CustomDialog */,
 				9ED03435277082F9007A32A5 /* CollectionView+getSpace.swift */,
 				9ED03437277097AD007A32A5 /* ImageExample.swift */,
 				9E8561382770C4580093A1D3 /* UIImage+RoundedCorner.swift */,
@@ -593,6 +622,74 @@
 				9ED8B16E277A03A3005C96A1 /* Register.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		9EE5EEBA27D7CE460063A273 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9E3449AE2766531900A55178 /* UserFormVC.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9EE5EEBB27D7CE530063A273 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9EE5EECD27D7D1710063A273 /* UserFormPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		9EE5EEBC27D7CE5E0063A273 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9EE5EECA27D7D13F0063A273 /* UserFormInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		9EE5EEBD27D7CE650063A273 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				9EE5EEC827D7D0F20063A273 /* UserFormRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		9EE5EEBE27D7CE6C0063A273 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9EE5EEBF27D7CEAD0063A273 /* UserOperationProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		9EE5EEC127D7CF4A0063A273 /* UserOperation */ = {
+			isa = PBXGroup;
+			children = (
+				9EE5EEC227D7CF580063A273 /* RegisterRequest.swift */,
+				9EE5EEC427D7CF600063A273 /* LoginRequest.swift */,
+				9EE5EEC627D7D0920063A273 /* UserResponse.swift */,
+			);
+			path = UserOperation;
+			sourceTree = "<group>";
+		};
+		9EE5EECF27D7D48E0063A273 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9EE5EED027D7D4970063A273 /* NetworkUrl.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9EE5EED227D88F9E0063A273 /* CustomDialog */ = {
+			isa = PBXGroup;
+			children = (
+				9EE5EED327D88FAF0063A273 /* CustomDialogVC.swift */,
+				9EE5EED527D88FC00063A273 /* CustomDialogView.xib */,
+				9EE5EEDB27D895CE0063A273 /* CustomDialogContent.swift */,
+			);
+			path = CustomDialog;
 			sourceTree = "<group>";
 		};
 		B624344EDA19EC633B0B1F61 /* Pods */ = {
@@ -721,6 +818,7 @@
 				9ED0343027707D28007A32A5 /* MainpageSportMovementCollectionViewCell.xib in Resources */,
 				9ED03423276FD6FA007A32A5 /* UserOperation.storyboard in Resources */,
 				9E344989276651B400A55178 /* LaunchScreen.storyboard in Resources */,
+				9EE5EED627D88FC00063A273 /* CustomDialogView.xib in Resources */,
 				9E3449B627665BED00A55178 /* FormCell.xib in Resources */,
 				9E344986276651B400A55178 /* Assets.xcassets in Resources */,
 				9E3B3AC42782025C00C9F13F /* ProfileMenuTableViewCell.xib in Resources */,
@@ -857,27 +955,34 @@
 				9E3B3969277C60D100C9F13F /* ProfileMenuProtocols.swift in Sources */,
 				9ED03428276FDA08007A32A5 /* MainpageVC.swift in Sources */,
 				9E3B3AC32782025C00C9F13F /* ProfileMenuTableViewCell.swift in Sources */,
+				9EE5EED427D88FAF0063A273 /* CustomDialogVC.swift in Sources */,
 				9E0123BF27AC30C4004C8904 /* UINavigationItem+setNavigationItem.swift in Sources */,
 				9ED03436277082F9007A32A5 /* CollectionView+getSpace.swift in Sources */,
 				9E0123CD27AC73B8004C8904 /* WorkoutDetailVC.swift in Sources */,
+				9EE5EEC327D7CF580063A273 /* RegisterRequest.swift in Sources */,
 				9E34497D276651B200A55178 /* AppDelegate.swift in Sources */,
+				9EE5EECB27D7D13F0063A273 /* UserFormInteractor.swift in Sources */,
 				9E3B3AB62780FFA300C9F13F /* WorkoutPresenter.swift in Sources */,
 				9E2E282027AD6AAA00E813AB /* UINavigationController+setBarButtons.swift in Sources */,
 				9E0123C727AC6CC0004C8904 /* CollectionView+setDesign.swift in Sources */,
 				9E3B3AB42780FF5000C9F13F /* WorkoutProtocols.swift in Sources */,
 				9E2E282527AD6DEF00E813AB /* SettingsVC.swift in Sources */,
 				9E3B3959277C59BA00C9F13F /* MainpagePresenter.swift in Sources */,
+				9EE5EEDC27D895CE0063A273 /* CustomDialogContent.swift in Sources */,
 				9E8847EF27AC2B3C005269AD /* Constant.swift in Sources */,
+				9EE5EED127D7D4970063A273 /* NetworkUrl.swift in Sources */,
 				9E3449B527665BED00A55178 /* FormCell.swift in Sources */,
 				9ED03438277097AD007A32A5 /* ImageExample.swift in Sources */,
 				9E3B395D277C5BA700C9F13F /* MainpageRouter.swift in Sources */,
 				9E3B3ABA2780FFB500C9F13F /* WorkoutRouter.swift in Sources */,
 				9E3B3AC827820C3200C9F13F /* ProfileMenuInteractor.swift in Sources */,
 				9ED0342A276FE0D0007A32A5 /* CustomTabBar.swift in Sources */,
+				9EE5EEC027D7CEAD0063A273 /* UserOperationProtocols.swift in Sources */,
 				9ED8B16D277A0393005C96A1 /* Login.swift in Sources */,
 				9ED0342F27707D28007A32A5 /* MainpageSportMovementCollectionViewCell.swift in Sources */,
 				9E3B3AC627820C0200C9F13F /* ProfileMenuRouter.swift in Sources */,
 				9E3B3957277C579D00C9F13F /* MainpageProtocols.swift in Sources */,
+				9EE5EECE27D7D1710063A273 /* UserFormPresenter.swift in Sources */,
 				9ED8B16F277A03A3005C96A1 /* Register.swift in Sources */,
 				9E34497F276651B200A55178 /* SceneDelegate.swift in Sources */,
 				9E8561392770C4590093A1D3 /* UIImage+RoundedCorner.swift in Sources */,
@@ -885,6 +990,7 @@
 				9E0123C927AC7071004C8904 /* UITabbarController+setTabbar.swift in Sources */,
 				9E3449AF2766531900A55178 /* UserFormVC.swift in Sources */,
 				9E3B3967277C60A900C9F13F /* ProfileMenuVC.swift in Sources */,
+				9EE5EEC727D7D0920063A273 /* UserResponse.swift in Sources */,
 				9E2E281E27AD680300E813AB /* BarButtonPlace.swift in Sources */,
 				9E3B3ACA27820C3C00C9F13F /* ProfileMenuPresenter.swift in Sources */,
 				9E3B3AB82780FFAD00C9F13F /* WorkoutInteractor.swift in Sources */,
@@ -892,7 +998,9 @@
 				9E3B3ABF2781023300C9F13F /* MenuItem.swift in Sources */,
 				9E3B3AB22780FF4400C9F13F /* WorkoutVC.swift in Sources */,
 				9E8847ED27AC1B73005269AD /* UIButton+reshape.swift in Sources */,
+				9EE5EEC927D7D0F20063A273 /* UserFormRouter.swift in Sources */,
 				9ED0343327707E09007A32A5 /* Workout.swift in Sources */,
+				9EE5EEC527D7CF600063A273 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,6 +1180,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LRQ65F65GJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AIFitness/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1101,6 +1210,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LRQ65F65GJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AIFitness/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

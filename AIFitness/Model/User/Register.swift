@@ -11,8 +11,16 @@ class Register:Codable{
     var password:String = ""
     var name:String = ""
     var surname:String = ""
-    var birthday:String = ""
+    var email:String = ""
     var telNumber:String = ""
     
     
+    func clear(){
+        username = ""
+        password = ""
+        name = ""
+        surname = ""
+        email = ""
+        telNumber = ""
+    }
 }

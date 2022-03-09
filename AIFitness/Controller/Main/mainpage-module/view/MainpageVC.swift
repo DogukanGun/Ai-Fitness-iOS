@@ -27,9 +27,11 @@ class MainpageVC:UIViewController{
     override func viewDidLoad() {
         scrollView.contentSize = CGSize(width: scrollView.contentSize.width,height: scrollView.frame.size.height);
         tabBarController?.setTabbar()
-        createView()
         navigationItem.setNavigationBar()
         navigationController?.setBarButtons(navigationItem: navigationItem)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        createView()
     }
     private func createView(){
         createCollectionView()
@@ -56,6 +58,7 @@ class MainpageVC:UIViewController{
             textfield.frame = frame
             textfield.backgroundColor = UIColor(named: "TabbarColor")
         }
+        searchBar.delegate = self
     }
     
 }
@@ -87,6 +90,16 @@ extension MainpageVC:UICollectionViewDelegateFlowLayout{
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
                 return sectionInsets.left
         }
+}
+
+extension MainpageVC:UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let text = searchBar.text, text != ""{
+            presenter?.searchData(word:text)
+        }else{
+            presenter?.getAllData()
+        }
+    }
 }
 
 

@@ -12,7 +12,7 @@ enum UserForm :String{
     case PASSWORD = "Password"
     case NAME = "Name"
     case SURNAME = "Surname"
+    case EMAIL = "Email"
     case TELEPHONE = "Telephone"
-    case BIRTHDAY = "Birthday"
 }
  

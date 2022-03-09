@@ -30,11 +30,13 @@ class UserFormVC:UIViewController{
     
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var form: UITableView!
-    var formFields = [UserForm.USERNAME,UserForm.PASSWORD,UserForm.NAME,UserForm.SURNAME,UserForm.BIRTHDAY]
+    var formFields = [UserForm.USERNAME,UserForm.NAME,UserForm.EMAIL,UserForm.PASSWORD]
     private var register = Register()
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    var presenter:ViewToPresenterUserOperationProtocol?
     
     override func viewDidLoad() {
+        UserFormRouter.createModule(ref: self)
         setTableView()
         button.reshape()
         button.titleLabel?.text = UserFormVariable.segmentButtonRegister
@@ -63,19 +65,22 @@ class UserFormVC:UIViewController{
             formFields = [UserForm.USERNAME,UserForm.PASSWORD]
             button.titleLabel?.text = UserFormVariable.segmentButtonLogin
         }else if sender.titleForSegment(at: sender.selectedSegmentIndex) == UserFormVariable.segmentButtonRegister{
-            formFields = [UserForm.USERNAME,UserForm.PASSWORD,UserForm.NAME,UserForm.SURNAME,UserForm.BIRTHDAY]
+            formFields = [UserForm.USERNAME,UserForm.PASSWORD,UserForm.NAME,UserForm.EMAIL]
             button.titleLabel?.text = UserFormVariable.segmentButtonRegister
         }
         button.titleLabel?.textAlignment = .center
+        register.clear()
         form.reloadData()
     }
     
     @IBAction func buttonPressed(){
-        /*AF.request("url", method: .post, parameters: register, encoder: .json, headers: nil, interceptor: nil, requestModifier: nil).validate()
-            .responseData { AFdata in
-                
-            }*/
-        changeStoryboard()
+        if(formFields.contains(UserForm.EMAIL)){
+            let regiterRequest = RegisterRequest(name: register.name, username: register.username, password: register.password, email: register.email)
+            presenter?.register(registerRequest: regiterRequest)
+        }else{
+            let loginRequest = LoginRequest(username: register.username, password: register.password)
+            presenter?.login(loginRequest: loginRequest)
+        }
     }
     
     private func changeStoryboard(){
@@ -93,6 +98,7 @@ extension UserFormVC:UITableViewDelegate,UITableViewDataSource{
             return UITableViewCell()
         }
         cell.refresh(field: formFields[indexPath.row])
+        cell.delegate = self
         cell.separatorInset = UIEdgeInsets(top: UserFormVariable.TableViewCellPadding.topPadding, left: UserFormVariable.TableViewCellPadding.leftPadding, bottom: UserFormVariable.TableViewCellPadding.bottomPadding, right: UserFormVariable.TableViewCellPadding.rightPadding)
         return cell
     }
@@ -115,10 +121,35 @@ extension UserFormVC:UserFormProtocol{
                 register.username = value
             case .TELEPHONE:
                 register.telNumber = value
-            case .BIRTHDAY:
-                register.birthday = value
+            case .EMAIL:
+                register.email = value
         }
     }
+    
+}
+
+extension UserFormVC:PresenterToViewUserOperationProtocol{
+    func response(response: UserResponse) {
+        if(response.success){
+            changeStoryboard()
+        }else{
+            let alert = CustomDialogVC.instance
+            let content = CustomDialogContent(title: "Test", message: "Test", positiveButtonText: "Test", negativeButtonText: nil, buttonDelegate: self)
+            alert.customDialogContent = content
+            alert.showAlert()
+        }
+    }
+}
+
+extension UserFormVC:CustomDialogButtonDelegate{
+    func positiveButtonPressed() {
+        
+    }
+    
+    func negativeButtonPressed() {
+        
+    }
+    
     
 }
 
@@ -126,3 +157,4 @@ protocol UserFormProtocol{
     func userFormProtocol(cell:UserForm,_ value:String)
 }
  
+

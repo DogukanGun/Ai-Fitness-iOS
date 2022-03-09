@@ -9,6 +9,7 @@ import Foundation
 
 
 class MainpagePresenter:ViewToPresenterMainpageProtocol{
+    
     var interactor: PresenterToInteractorMainpageProtocol?
     
     var view: PresenterToViewMainpageProtocol?
@@ -17,6 +18,9 @@ class MainpagePresenter:ViewToPresenterMainpageProtocol{
         interactor?.getAllData()
     }
     
+    func searchData(word: String) {
+        interactor?.searchData(word: word)
+    }
     
 }
 
