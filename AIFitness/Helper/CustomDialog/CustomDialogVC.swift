@@ -9,12 +9,10 @@ import Foundation
 import UIKit
 
 class CustomDialogVC:UIView{
+    
     static let instance = CustomDialogVC()
-
     var customDialogContent:CustomDialogContent?
-    
     private var negativeButtonDisable = false
-    
     @IBOutlet weak var negativeButtonSpaceView: UIView!
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var customDialogWrapper: UIView!
@@ -35,19 +33,20 @@ class CustomDialogVC:UIView{
         fatalError("init(coder:) has not been implemented")
     }
           
+    @IBOutlet weak var bottomWrapper: UIStackView!
     
     private func setCustomDialogContent(_customDialogContent:CustomDialogContent){
         customDialogWrapper.layer.cornerRadius = CGFloat(10)
+        bottomWrapper.layer.cornerRadius = CGFloat(10)
         customDialogWrapper.layer.borderWidth = 2
         customDialogWrapper.layer.borderColor = UIColor(named: "TabbarColor")?.cgColor
         customDialogMessage.layer.cornerRadius = CGFloat(30)
         customDialogTitle.layer.cornerRadius = CGFloat(30)
-
         parentView.backgroundColor = UIColor(white: 1, alpha: 0.5)
         customDialogTitle.text = _customDialogContent.title
         customDialogMessage.text = _customDialogContent.message
         customDialogPositiveButton.reshape()
-        customDialogPositiveButton.titleLabel?.text = _customDialogContent.positiveButtonText
+        customDialogPositiveButton.setTitle(_customDialogContent.positiveButtonText, for: .normal)
         if let negativeButtonText = _customDialogContent.negativeButtonText{
             customDialogNegativeButton.reshape()
             customDialogNegativeButton.titleLabel?.text = negativeButtonText

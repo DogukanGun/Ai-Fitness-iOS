@@ -12,7 +12,7 @@ class MainpageInteractor:PresenterToInteractorMainpageProtocol{
     var presenter: InteractorToPresenterMainpageProtocol?
     
     func getAllData() {
-        AF.request(NetworkUrl.getAllWorkouts, method: .post)
+        AF.request(NetworkUrl.getAllWorkouts, method: .post,headers: NetworkUrl.getHeader())
             .responseDecodable(of: [Workout].self){ response in
                 do{
                     self.presenter?.sendDataToPresenter(data: response.value ?? [Workout]()) 
@@ -23,7 +23,7 @@ class MainpageInteractor:PresenterToInteractorMainpageProtocol{
     }
     
     func searchData(word: String) {
-        AF.request(NetworkUrl.getWorkoutsByName+word, method: .post)
+        AF.request(NetworkUrl.getWorkoutsByName+word, method: .post,headers: NetworkUrl.getHeader())
             .responseDecodable(of: [Workout].self){ response in
                 do{
                     self.presenter?.sendDataToPresenter(data: response.value ?? [Workout]())

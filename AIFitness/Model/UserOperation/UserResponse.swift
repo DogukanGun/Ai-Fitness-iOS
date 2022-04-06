@@ -10,7 +10,7 @@ import Foundation
 
 class UserResponse:Codable{
     var success:Bool
-    
+    var data:UserResponseData?
     init(success:Bool){
         self.success = success
     }

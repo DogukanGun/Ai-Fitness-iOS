@@ -32,6 +32,7 @@ class UserFormVC:UIViewController{
     @IBOutlet weak var form: UITableView!
     var formFields = [UserForm.USERNAME,UserForm.NAME,UserForm.EMAIL,UserForm.PASSWORD]
     private var register = Register()
+    let alert = LoadingViewVC.instance
     @IBOutlet weak var segmentControl: UISegmentedControl!
     var presenter:ViewToPresenterUserOperationProtocol?
     
@@ -42,7 +43,12 @@ class UserFormVC:UIViewController{
         button.titleLabel?.text = UserFormVariable.segmentButtonRegister
         addSegmentButton()
         navigationItem.setNavigationBar()
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard(){
+        view.endEditing(true)
     }
     
     private func setTableView(){
@@ -74,11 +80,13 @@ class UserFormVC:UIViewController{
     }
     
     @IBAction func buttonPressed(){
+        alert.showAlert()
         if(formFields.contains(UserForm.EMAIL)){
             let regiterRequest = RegisterRequest(name: register.name, username: register.username, password: register.password, email: register.email)
             presenter?.register(registerRequest: regiterRequest)
         }else{
             let loginRequest = LoginRequest(username: register.username, password: register.password)
+            button.titleLabel?.text = UserFormVariable.segmentButtonLogin
             presenter?.login(loginRequest: loginRequest)
         }
     }
@@ -98,6 +106,7 @@ extension UserFormVC:UITableViewDelegate,UITableViewDataSource{
             return UITableViewCell()
         }
         cell.refresh(field: formFields[indexPath.row])
+        cell.selectionStyle = .none
         cell.delegate = self
         cell.separatorInset = UIEdgeInsets(top: UserFormVariable.TableViewCellPadding.topPadding, left: UserFormVariable.TableViewCellPadding.leftPadding, bottom: UserFormVariable.TableViewCellPadding.bottomPadding, right: UserFormVariable.TableViewCellPadding.rightPadding)
         return cell
@@ -130,11 +139,12 @@ extension UserFormVC:UserFormProtocol{
 
 extension UserFormVC:PresenterToViewUserOperationProtocol{
     func response(response: UserResponse) {
+        alert.hideView()
         if(response.success){
             changeStoryboard()
         }else{
             let alert = CustomDialogVC.instance
-            let content = CustomDialogContent(title: "Test", message: "Test", positiveButtonText: "Test", negativeButtonText: nil, buttonDelegate: self)
+            let content = CustomDialogContent(title: "Internet Fail", message: "Please try again later.", positiveButtonText: "Okay", negativeButtonText: nil, buttonDelegate: self)
             alert.customDialogContent = content
             alert.showAlert()
         }

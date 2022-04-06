@@ -11,27 +11,27 @@ import Foundation
 // main protocol
 protocol PresenterToInteractorProfileMenuProtocol{
     var presenter:InteractorToPresenterProfileMenuProtocol? {get set}
-    
-    func getSubMenuItem(menu:MenuItem)
-    func getAllMenu()
+    func getProfile()
+    func saveProfileImage(profileImage:ProfileImage)
+    func saveProfile(profile:Profile)
     
 }
 
 protocol ViewToPresenterProfileMenuProtocol{
     var interactor:PresenterToInteractorProfileMenuProtocol? {get set}
     var view:PresenterToViewProfileMenuProtocol? {get set}
-    
-    func getSubMenuItem(menu:MenuItem)
-    func getAllMenu()
+    func getProfile()
+    func saveProfileImage(profileImage:ProfileImage)
+    func saveProfile(profile:Profile)
 }
 
 //helper protocol
 protocol InteractorToPresenterProfileMenuProtocol{
-    func sendMenuItem(menuItems:[MenuItem])
+    func sendProfile(profile:ProfileResponseData)
 }
 
-protocol PresenterToViewProfileMenuProtocol{
-    func sendMenuItem(menuItems:[MenuItem])
+protocol PresenterToViewProfileMenuProtocol{ 
+    func sendProfile(profile:ProfileResponseData)
 }
 
 //router

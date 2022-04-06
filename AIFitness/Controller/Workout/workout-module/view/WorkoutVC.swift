@@ -21,6 +21,8 @@ class WorkoutVC:UIViewController{
     @IBOutlet weak var workoutCollectionList: UICollectionView!
     var presenter:ViewToPresenterWorkoutProtocol? = nil
     var workoutList = [Workout]()
+    let alert = LoadingViewVC.instance
+
     
     override func viewDidLoad() {
         WorkoutRouter.createModule(ref: self)
@@ -40,6 +42,7 @@ class WorkoutVC:UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        alert.showAlert()
         presenter?.getWorkouts()
     }
 }
@@ -47,6 +50,7 @@ class WorkoutVC:UIViewController{
 extension WorkoutVC:PresenterToViewWorkoutProtocol{
     func sendWorkouts(workouts: [Workout]) {
         self.workoutList = workouts
+        alert.hideView()
         DispatchQueue.main.async {
             self.workoutCollectionList.reloadData()
         }
@@ -81,6 +85,7 @@ extension WorkoutVC:WorkoutCellDelegate{
     func workoutItemClicked(workout: Workout) {
         performSegue(withIdentifier: WorkoutVariables.segueIdentifierToWorkoutDetail, sender: workout)
     }
+    
 }
 
 

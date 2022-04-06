@@ -6,26 +6,61 @@
 //
 
 import Foundation
+import Alamofire
 
 
 class ProfileMenuInteractor:PresenterToInteractorProfileMenuProtocol{
-    func getAllMenu() {
-        var list = [MenuItem]()
-        let item = MenuItem(id: 0, menuName: "Test1", menuImageName: "star")
-        list.append(item)
-        presenter?.sendMenuItem(menuItems: list)
-    }
     
     var presenter: InteractorToPresenterProfileMenuProtocol?
     
-    func getSubMenuItem(menu: MenuItem) {
-        //get menu
-        var list = [MenuItem]()
-        let item = MenuItem(id: 0, menuName: "Test1", menuImageName: "star")
-        list.append(item)
-        //send menu
-        presenter?.sendMenuItem(menuItems: list)
+    func getProfile(){
+        let username = UserDefaults.standard.value(forKey: UserDefaultsKey.USERNAME.rawValue) as! String
+        let profileRequest = Profile(username: username, email: "", phoneNumber: "")
+        
+        AF.request(NetworkUrl.getProfile, method: .post,parameters: profileRequest.toJson(),encoding: JSONEncoding.default,headers: NetworkUrl.getHeader())
+            .responseDecodable(of: ProfileResponse.self){ response in
+                do{
+                    if let profile = response.value?.data{
+                        self.presenter?.sendProfile(profile: profile)
+                    }
+                }catch{
+                    print(error)
+                }
+        }
     }
+    
+    func saveProfileImage(profileImage:ProfileImage){
+        let username = UserDefaults.standard.value(forKey: UserDefaultsKey.USERNAME.rawValue) as! String
+        profileImage.username = username
+        AF.request(NetworkUrl.updateProfilePhoto, method: .post,parameters: profileImage.toJson(),encoding: JSONEncoding.default,headers: NetworkUrl.getHeader())
+            .responseDecodable(of: ProfileResponseData.self){ response in
+                do{
+                    if let profile = response.value{
+                        self.presenter?.sendProfile(profile: profile)
+                    }
+                }catch{
+                    print(error)
+                }
+        }
+    }
+    
+    func saveProfile(profile:Profile) {
+        let username = UserDefaults.standard.value(forKey: UserDefaultsKey.USERNAME.rawValue) as! String
+        profile.username = username
+        let profileRequest = profile
+        
+        AF.request(NetworkUrl.updateProfile, method: .post,parameters: profileRequest.toJson(),encoding: JSONEncoding.default,headers: NetworkUrl.getHeader())
+            .responseDecodable(of: ProfileResponse.self){ response in
+                do{
+                    if let profile = response.value?.data{
+                        self.presenter?.sendProfile(profile: profile)
+                    }
+                }catch{
+                    print(error)
+                }
+        }
+    }
+
 }
 
 

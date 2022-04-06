@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewVC" customModule="AIFitness" customModuleProvider="target">
+            <connections>
+                <outlet property="parentView" destination="iN0-l3-epB" id="J3E-BG-iRd"/>
+                <outlet property="wrapper" destination="oq6-L7-g20" id="2PS-OC-x1H"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oq6-L7-g20">
+                    <rect key="frame" x="57" y="298" width="300" height="300"/>
+                    <color key="backgroundColor" name="CustomDialogBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="JuC-db-zG8"/>
+                        <constraint firstAttribute="height" constant="300" id="RJI-aY-iMk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="CustomDialogBackground"/>
+            <constraints>
+                <constraint firstItem="oq6-L7-g20" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="VAy-xx-YDS"/>
+                <constraint firstItem="oq6-L7-g20" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="a6H-pj-JHf"/>
+            </constraints>
+            <point key="canvasLocation" x="-113" y="-38"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="CustomDialogBackground">
+            <color red="0.4823529411764706" green="0.47450980392156861" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

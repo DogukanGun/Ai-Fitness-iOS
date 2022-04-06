@@ -20,6 +20,7 @@ class MainpageVC:UIViewController{
     @IBOutlet weak var collectionViewTitle: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let alert = LoadingViewVC.instance
     var presenter:ViewToPresenterMainpageProtocol?
     var sports = [Workout]()
     private let itemsPerRow:CGFloat=2
@@ -29,6 +30,11 @@ class MainpageVC:UIViewController{
         tabBarController?.setTabbar()
         navigationItem.setNavigationBar()
         navigationController?.setBarButtons(navigationItem: navigationItem)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func hideKeyboard(){
+        view.endEditing(true)
     }
     override func viewWillAppear(_ animated: Bool) {
         createView()
@@ -37,6 +43,7 @@ class MainpageVC:UIViewController{
         createCollectionView()
         prepareSearchBar()
         MainpageRouter.createModule(ref: self)
+        alert.showAlert()
         presenter?.getAllData()
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -106,6 +113,7 @@ extension MainpageVC:UISearchBarDelegate{
 extension MainpageVC:PresenterToViewMainpageProtocol{
     func sendDataToView(data: [Workout]) {
         self.sports = data
+        alert.hideView()
         collection.reloadData()
     }
 }

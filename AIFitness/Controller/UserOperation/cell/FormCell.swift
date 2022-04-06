@@ -28,12 +28,16 @@ class FormCell: UITableViewCell {
         switch field {
             case .PASSWORD:
                 textField.textContentType = UITextContentType.password
+                textField.isSecureTextEntry = true
             case .NAME,.SURNAME,.USERNAME:
                 textField.textContentType = UITextContentType.name
+                textField.isSecureTextEntry = false
             case .TELEPHONE:
                 textField.textContentType = UITextContentType.telephoneNumber
+                textField.isSecureTextEntry = false
             case .EMAIL:
                 textField.textContentType = UITextContentType.emailAddress
+                textField.isSecureTextEntry = false
         }
         textField.text = ""
         textField.attributedPlaceholder = NSAttributedString(

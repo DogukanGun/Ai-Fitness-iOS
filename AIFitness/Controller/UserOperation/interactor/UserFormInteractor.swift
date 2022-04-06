@@ -18,7 +18,14 @@ class UserFormInteractor:PresenterToInteractorUserOperationProtocol{
                    encoding: JSONEncoding.default)
             .responseDecodable(of: UserResponse.self){ response in
                 do{
-                    self.presenter?.response(response: response.value ?? UserResponse(success: false))
+                    if let response = response.value{
+                        if response.success{
+                            UserDefaults.standard.set(registerRequest.username, forKey: UserDefaultsKey.USERNAME.rawValue)
+                        }
+                        self.presenter?.response(response: response)
+                    }else{
+                        self.presenter?.response(response:UserResponse(success: false))
+                    }
                 }catch{
                     print(error)
                 }
@@ -29,7 +36,15 @@ class UserFormInteractor:PresenterToInteractorUserOperationProtocol{
         AF.request(NetworkUrl.loginUser, method: .post, parameters: loginRequest.toJson(),encoding: JSONEncoding.default)
             .responseDecodable(of: UserResponse.self) { response in
                 do{
-                    self.presenter?.response(response: response.value ?? UserResponse(success: false))
+                    if let response = response.value{
+                        if response.success{
+                            UserDefaults.standard.set(loginRequest.username, forKey: UserDefaultsKey.USERNAME.rawValue)
+                            NetworkUrl.token = response.data?.token ?? ""
+                            self.presenter?.response(response: response)
+                        }
+                    }else{
+                        self.presenter?.response(response:UserResponse(success: false))
+                    }
                 }catch{
                     print(error)
                 }

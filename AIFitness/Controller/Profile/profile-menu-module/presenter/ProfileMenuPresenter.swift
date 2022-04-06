@@ -8,23 +8,27 @@
 import Foundation
 
 class ProfileMenuPresenter:ViewToPresenterProfileMenuProtocol{
-    
-    
+     
     var interactor: PresenterToInteractorProfileMenuProtocol?
     
     var view: PresenterToViewProfileMenuProtocol?
     
-    func getSubMenuItem(menu: MenuItem) {
-        interactor?.getSubMenuItem(menu: menu)
+    func saveProfileImage(profileImage: ProfileImage) {
+        interactor?.saveProfileImage(profileImage: profileImage)
     }
-    func getAllMenu() {
-        interactor?.getAllMenu()
+    func getProfile() {
+        interactor?.getProfile()
     }
+    func saveProfile(profile:Profile) {
+        interactor?.saveProfile(profile: profile)
+    }
+     
 }
 
 
 extension ProfileMenuPresenter:InteractorToPresenterProfileMenuProtocol{
-    func sendMenuItem(menuItems: [MenuItem]) {
-        view?.sendMenuItem(menuItems: menuItems)
-    } 
+    func sendProfile(profile: ProfileResponseData) {
+        view?.sendProfile(profile: profile)
+    }
+     
 }
